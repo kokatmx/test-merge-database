@@ -99,7 +99,7 @@ CREATE TABLE geko_lahan_staging (
     gis_updated_at VARCHAR(50),
     gis_officer VARCHAR(100),
     gis_not_eligible_status VARCHAR(50),
-    gps_accuration VARCHAR(50),n
+    gps_accuration VARCHAR(50),
     status VARCHAR(50),
     status_perubahan_tutupan VARCHAR(50),
     plant_status VARCHAR(50),
