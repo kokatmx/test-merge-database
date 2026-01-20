@@ -5,9 +5,9 @@ CREATE DATABASE new_database
 
 USE new_database;
 
-DROP TABLE IF EXISTS geko_lahan_staging;
+DROP TABLE IF EXISTS geko_lahan;
 
-CREATE TABLE geko_lahan_staging (
+CREATE TABLE geko_lahan (
     id INT,
     lahan_no VARCHAR(100),
     document_no VARCHAR(100),
@@ -133,7 +133,7 @@ SET GLOBAL local_infile = 1;
 
 -- Import CSV file GEKO Lahan
 LOAD DATA LOCAL INFILE 'E:/Test Kerja/trees4tress/migrasi-data/database/data/LahanGEKO_2023 3(in).csv'
-INTO TABLE geko_lahan_staging
+INTO TABLE geko_lahan
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -224,5 +224,5 @@ SET
     legal_eligibility_at = NULLIF(@legal_eligibility_at, '\\N');
 
 -- Verifikasi hasil import
-SELECT COUNT(*) AS total_rows FROM geko_lahan_staging;
-SELECT * FROM geko_lahan_staging LIMIT 5;
+SELECT COUNT(*) AS total_rows FROM geko_lahan;
+SELECT * FROM geko_lahan LIMIT 5;
